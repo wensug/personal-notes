@@ -1,0 +1,13 @@
+
+GET http://localhost:3001/notes/
+###
+POST http://localhost:3001/notes/add   HTTP/1.1 
+Content-Type: application/json
+
+{
+"title": "myfirstnote", 
+"text": "hello im wendy",
+"created": "2019-04-29T21:19:15.187Z"
+}
+
+###
