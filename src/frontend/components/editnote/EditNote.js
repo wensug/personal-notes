@@ -1,7 +1,7 @@
 import React from "react";
 
 
-class NotesList extends React.Component {
+class EditNote extends React.Component {
     render() {
         return(
         <div>
@@ -12,4 +12,4 @@ class NotesList extends React.Component {
        
 }
 
-export default NotesList
+export default EditNote

@@ -11,7 +11,7 @@ export default function Header() {
         </p>
         <ul className='menu'>
           <li>
-            <NavLink to='/'>Notes</NavLink>
+            <NavLink to='/'>Home</NavLink>
           </li>
           <li>
             <NavLink to='/create'>Create Note</NavLink>

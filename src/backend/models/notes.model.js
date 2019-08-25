@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const NoteSchema = new mongoose.Schema({
   title: { type: String },
   text: { type: String, required: true },
-  created: { type: Date, default: Date.now },
+  date: { type: Date, default: Date.now },
   status: { 
       type: String, 
       enum: ['unarchive', 'archieve'],

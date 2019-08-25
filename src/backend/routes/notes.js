@@ -12,13 +12,13 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
   const title = req.body.title;
   const text = req.body.text;
-  const created = Date.parse(req.body.created);
+  const date = Date.parse(req.body.date);
   const status = req.body.status;
 
   const newNote = new Note({
     title,
     text,
-    created,
+    date,
     status,
   });
 
@@ -47,7 +47,7 @@ router.route('/update/:id').post((req, res) => {
     .then(note => {
       note.title = req.body.title;
       note.text = req.body.text;
-      note.created = Date.parse(req.body.created);
+      note.date = Date.parse(req.body.date);
       note.status = req.body.status;
 
       note.save()
