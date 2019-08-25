@@ -31,7 +31,21 @@ class CreateNote extends React.Component {
         text: this.state.text, 
         date: this.state.date
     }
-    console.log(note);
+    
+    fetch("/notes/add", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(note)
+      }).then(console.log(note));
+    
+      this.setState({
+        title: '',
+        text: '',
+        date: new Date()
+      })
+   
   }
 
   render() {
