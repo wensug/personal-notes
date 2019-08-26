@@ -1,4 +1,4 @@
-@id = 5d63cfc5763ee73f22e6043d
+@id = 5d6455741ec91a3522abc525
 GET http://localhost:3001/notes/
 
 ###
@@ -9,19 +9,19 @@ POST http://localhost:3001/notes/add   HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Trip to Spain", 
+    "title": "Trip to Manchester", 
     "text": "Buy tickets, flight and book the flat. Remember check insurace",
-    "date": "2019-07-29T21:19:15.187Z"
+    "date": "2019-05-29T21:19:15.187Z"
 }
 
 ###
-POST http://localhost:3001/notes/update/{{id}} HTTP/1.1 
+PUT http://localhost:3001/notes/update/{{id}} HTTP/1.1 
 Content-Type: application/json
 
 {
-    "title": "Trip to Spain",
+    "title": "Trip to Japon",
     "text": "Call the insurace company",
-    "date": "2019-07-29T21:19:15.187Z"
+    "date": "2019-07-30T21:19:15.187Z"
 }
 
 ###

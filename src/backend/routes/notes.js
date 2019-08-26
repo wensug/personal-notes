@@ -1,15 +1,19 @@
 const router = require('express').Router();
 let Note = require('../models/notes.model');
 
-// Defined get data route
-router.route('/').get((req, res) => {
-  Note.find()
-    .then(notes => res.json(notes))
-    .catch(err => res.status(400).json('Error: ' + err));
+// Defined GET data route
+router.route('/').get(async(req, res) => {
+  Note.find((err, notes) => {
+    if(err){
+      res.status(400).send(err)
+    } else {
+      res.status(200).json(notes)
+    }
+  });
 });
 
-// Defined store route
-router.route('/add').post((req, res) => {
+// Defined POST/store route
+router.route('/add').post(async (req, res) => {
   const { title, text, status } = req.body
   const date = Date.parse(req.body.date);
 
@@ -19,29 +23,40 @@ router.route('/add').post((req, res) => {
     date,
     status,
   });
-
-  newNote.save()
-  .then(() => res.json('Note added!'))
-  .catch(err => res.status(400).json('Error: ' + err));
+    newNote.save((err, note) => {
+      if(err) {
+        res.status(400).send(err);
+      } else {
+        res.status(200).json(note);
+      } 
+    });
 });
 
-// Defined edit route
-router.route('/:id').get((req, res) => {
-  Note.findById(req.params.id)
-    .then(note => res.json(note))
-    .catch(err => res.status(400).json('Error: ' + err));
+// Defined GET/edit route
+router.route('/:id').get(async (req, res) => {
+  Note.findById(req.params.id, (err, note) => {
+    if(err) {
+      res.status(400).json(err)
+    }else{
+      res.status(200).json(note)
+    }
+  }); 
 });
 
-// Defined delete route
-router.route('/:id').delete((req, res) => {
-  Note.findByIdAndDelete(req.params.id)
-    .then(() => res.json('Note deleted.'))
-    .catch(err => res.status(400).json('Error: ' + err));
+// Defined DELETE route
+router.route('/:id').delete(async(req, res) => {
+  Note.findByIdAndDelete(req.params.id, (err) => {
+    if(err) {
+      res.status(400).json(err)
+    }else {
+      res.json({message: 'Note deleted.' })
+    }
+  });
 });
 
-// Defined update route
-router.route('/update/:id').post((req, res) => {
-  Note.findById(req.params.id)
+// Defined PUT/update route
+router.route('/update/:id').put((req, res) => {
+  Note.findById({_id: req.params.id})
     .then(note => {
       note.title = req.body.title;
       note.text = req.body.text;
@@ -49,10 +64,10 @@ router.route('/update/:id').post((req, res) => {
       note.status = req.body.status;
 
       note.save()
-        .then(() => res.json('Note updated!'))
-        .catch(err => res.status(400).json('Error: ' + err));
+        .then(note => res.status(200).json(note))
+        .catch(err => res.status(400).json(err));
     })
-    .catch(err => res.status(400).json('Error: ' + err));
+    .catch(err => res.status(400).json(err));
 });
 
 module.exports = router;
