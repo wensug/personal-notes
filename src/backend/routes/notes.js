@@ -10,10 +10,8 @@ router.route('/').get((req, res) => {
 
 // Defined store route
 router.route('/add').post((req, res) => {
-  const title = req.body.title;
-  const text = req.body.text;
+  const { title, text, status } = req.body
   const date = Date.parse(req.body.date);
-  const status = req.body.status;
 
   const newNote = new Note({
     title,
