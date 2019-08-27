@@ -1,34 +1,49 @@
-# ThirdCoding Assignment
-    Write a client-side web application in JavaScript (or typescript if preferred) with associated unit tests, that can price a
-    basket of goods in a number of different currencies
-    The goods that can be purchased, which are all priced in USD, are:
-    • Soup – $0.65 per tin
-    • Bread – $0.80 per loaf
-    • Milk – $1.15 per bottle
-    • Apples – $1.00 per bag
+# ThirdFort Coding Challenge - Personal Notes
 
-# Requirements:
-    1. The program should allow the user to add or remove items in a basket.
-    2. The user can click on a checkout button which will then display the total price for the basket with the option to
-    display the amount in different currencies.
-    For example, if the basket contained 2x Apples, with the currency selected being “EUR” and an exchange rate of
-    0.85, the total would be €1.70.
-    3. No UI design constraints are enforced so feel free to design and style the UI in the way you see as most appropriate
-    for the solution.
-    4. To convert to other currencies, you should create a (free) account on currencylayer.com:
-    https://currencylayer.com/product. This will then issue you with an API Key that permits reading from the various
-    public APIs listed on that site. (Note that the free tier API only allows conversion where the source currency is USD,
-    which is entirely suitable for this assignment and is why we’ve used USD in the above examples)
-    Your application should use the latest exchange rate for the selected currency by calling the currencyLayer API’s.
-    5. To display a list of currencies to the user your application must call the CurrencyLayer endpoint at
-    https://apilayer.net/api/list (which returns details of available currencies) and use the results as you see
-    fit.
+REST API backend application to manage personal notes in a multi-user environment.
 
-# Installation 
+# Installation
+
   - Open a terminal
+
   - git clone git@github.com:wensug/shopping-cart.git
+
   - `npm install`
-  - `npm run start` 
+
+  - `npm run start-dev`  Run the backend and frontend in parallel, you can test it automatically.
+
+        http://localhost:3000/
+
+  - You need to have mongod installed in your machine, and also REST Client extension (HTTP Request generation tool)
+
 
 # Instructions
-  - Please open http://localhost:3000/ to find out the solution. 
+
+The Personal Notes App allow the user to add, update and delete notes. Each note has a Title, Text, Date and Status.
+
+- Backend:
+    - To test the Server Api:
+
+        1.  Please open the testAPI.rest. It is a Rest Client field where you can test all the requests (GET/POST/PUT/DELETE) and see the response
+
+        2.  Click the Send Request link
+
+        3.  Feel free to change or update the @id variable
+
+    - `npm run test` for unit test
+
+
+# Technologies Used
+
+The Personal Notes App was created using MongoDB, Express, React and Node.js tech stack. These technologies were chosen to cover the full web development cycle, from front end to backend using JavaScript.
+
+    •  MongoDB is a very popular NoSQL database, flexible and easy to scale
+    •  Node and Express, are very fast and resilient web-server
+    •  React is a fast, scalable and simple JS library to build user interface
+
+Other tools used were Boostrap and React Route, to improve the user experience (style and navigation easier for the user).
+
+# Key Features to be added 
+•	User Login
+•	Send email to the users with the notes by week. 
+•	Deploy to Heroku or GitHub Pages
