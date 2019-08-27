@@ -1,15 +1,46 @@
 import React from "react";
+import Note from './Note'
 
 class NotesList extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       notes: []
     };
   }
 
-  notesList(){
+  componentDidMount() {
+    fetch('/notes/')
+      .then(response => response.json())
+      .then(notes => this.setState({ notes }))
+      .catch(error => console.log(error));
+  }
+  
+  // handleDelete(id) {
+  //   fetch('/notes/'+id, {
+  //     method:'delete'
+  //   }).then(response => response.json())
+  //     .then(notes => {
+  //       this.setState({
+  //         notes: this.state.notes.filter(el => el._id !== id)
+  //       })
+  //   })
+  //   .catch(error => console.log(error));
+  // }
 
+  noteList() {
+    return this.state.notes.map(note => {
+      return (
+        <Note 
+          _id={note._id}
+          title={note.title} 
+          text={note.text}
+          date={note.date}
+          key={note.title}
+          // handleDelete={this.handleDelete()}
+        />
+      )
+    });
   }
   render() {
     return (
@@ -24,7 +55,7 @@ class NotesList extends React.Component {
               <th colSpan="2">Action</th>
             </tr>
           </thead>
-          <tbody>{this.notesList()}</tbody>
+          <tbody>{this.noteList()}</tbody>
         </table>
       </div>
     );
