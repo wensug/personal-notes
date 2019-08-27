@@ -21,7 +21,7 @@ class EditNote extends React.Component {
           text: response.text,
           date: new Date(response.date)
         });
-      })
+      }) 
       .catch(error => console.log(error));
   }
 
@@ -44,20 +44,20 @@ class EditNote extends React.Component {
       text: this.state.text,
       date: this.state.date
     };
-
+    
     fetch("/notes/update/" + this.props.match.params.id, {
       method: "put",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(note)
-    }).then(console.log(note));
+    }).then(console.log(note))
     this.setState({
       title: "",
       text: "",
       date: new Date()
     });
-  }
+  };
 
   render() {
     return (

@@ -1,4 +1,4 @@
-@id = 5d651c082c64b349d4dd0afc
+@id = 5d65791e188ecad1f04fbbbb
 GET http://localhost:3001/notes/
 
 ###
@@ -19,8 +19,8 @@ PUT http://localhost:3001/notes/update/{{id}} HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "Trip to Japon",
-    "text": "Call the insurance company",
+    "title": "Trip to Manchester",
+    "text": "Call the insurance company before travelling",
     "date": "2019-07-30T21:19:15.187Z"
 }
 

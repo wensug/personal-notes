@@ -38,14 +38,8 @@ class CreateNote extends React.Component {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(note)
-      }).then(console.log(note));
-    
-      this.setState({
-        title: '',
-        text: '',
-        date: new Date()
-      })
-   
+      }).then(console.log(note))
+        .then(this.props.history.push('/'));
   }
 
   render() {

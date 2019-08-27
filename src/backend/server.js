@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const port = process.env.PORT || 3001;
 
 require('dotenv').config();
-
+//Connect DB
 mongoose.Promise = global.Promise;
 const uri = process.env.DB_URL_PRD || 'mongodb://localhost:27017/PersonalNote';
 mongoose.connect( uri, {useNewUrlParser: true})

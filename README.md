@@ -30,7 +30,7 @@ The Personal Notes App allow the user to add, update and delete notes. Each note
 
         3.  Feel free to change or update the @id variable
 
-    - `npm run test` for unit test
+    - `npm test` for unit test
 
 
 # Technologies Used
@@ -45,5 +45,6 @@ Other tools used were Boostrap and React Route, to improve the user experience (
 
 # Key Features to be added 
     •	User Login
-    •	Send email to the users with the notes by week. 
+    •	Send a copy of the note to the user by email
+    •	Connect with the Google Calender
     •	Deploy to Heroku or GitHub Pages

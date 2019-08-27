@@ -44,7 +44,7 @@ router.route('/:id').get(async (req, res) => {
 });
 
 // Defined DELETE route
-router.route('/:id').delete(async(req, res) => {
+router.route('/:id').delete(async (req, res) => {
   Note.findByIdAndDelete(req.params.id, (err,note) => {
     if(err) {
       res.status(400).json(err)
