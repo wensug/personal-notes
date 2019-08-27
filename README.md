@@ -6,7 +6,7 @@ REST API backend application to manage personal notes in a multi-user environmen
 
   - Open a terminal
 
-  - git clone git@github.com:wensug/shopping-cart.git
+  - git clone git@github.com:wensug/personal-notes.git
 
   - `npm install`
 
@@ -44,6 +44,6 @@ The Personal Notes App was created using MongoDB, Express, React and Node.js tec
 Other tools used were Boostrap and React Route, to improve the user experience (style and navigation easier for the user).
 
 # Key Features to be added 
-•	User Login
-•	Send email to the users with the notes by week. 
-•	Deploy to Heroku or GitHub Pages
+    •	User Login
+    •	Send email to the users with the notes by week. 
+    •	Deploy to Heroku or GitHub Pages

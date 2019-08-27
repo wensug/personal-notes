@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
     "title": "Trip to Manchester", 
-    "text": "Buy tickets, flight and book the flat. Remember check insurace",
+    "text": "Buy tickets, flight and book the flat. Remember check insurance",
     "date": "2019-05-29T21:19:15.187Z"
 }
 
@@ -20,7 +20,7 @@ Content-Type: application/json
 
 {
     "title": "Trip to Japon",
-    "text": "Call the insurace company",
+    "text": "Call the insurance company",
     "date": "2019-07-30T21:19:15.187Z"
 }
 
