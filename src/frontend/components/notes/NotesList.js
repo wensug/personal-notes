@@ -15,18 +15,6 @@ class NotesList extends React.Component {
       .then(notes => this.setState({ notes }))
       .catch(error => console.log(error));
   }
-  
-  // handleDelete(id) {
-  //   fetch('/notes/'+id, {
-  //     method:'delete'
-  //   }).then(response => response.json())
-  //     .then(notes => {
-  //       this.setState({
-  //         notes: this.state.notes.filter(el => el._id !== id)
-  //       })
-  //   })
-  //   .catch(error => console.log(error));
-  // }
 
   noteList() {
     return this.state.notes.map(note => {
@@ -37,7 +25,6 @@ class NotesList extends React.Component {
           text={note.text}
           date={note.date}
           key={note.title}
-          // handleDelete={this.handleDelete()}
         />
       )
     });
