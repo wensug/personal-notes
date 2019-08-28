@@ -46,5 +46,5 @@ Other tools used were Boostrap and React Route, to improve the user experience (
 # Key Features to be added 
     •	User Login
     •	Send a copy of the note to the user by email
-    •	Connect with the Google Calender
+    •	Connect with the Google Calendar
     •	Deploy to Heroku or GitHub Pages
